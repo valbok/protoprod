@@ -1,1 +1,1 @@
-# protoprod
+# Prototype of product feed
