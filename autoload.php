@@ -196,5 +196,8 @@ $loader->register();
 // register the base directories for the namespace prefix
 $loader->addNamespace('feed', 'models');
 $loader->addNamespace('feed', 'api');
+$loader->addNamespace('feed', 'controllers');
+$loader->addNamespace('feed', 'controllers/pages');
 $loader->addNamespace('feed\storage', 'models/storages');
 $loader->addNamespace('feed\storage', 'api');
+$loader->addNamespace('feed', 'lib/template');

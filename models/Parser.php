@@ -22,8 +22,8 @@ class Parser {
      * @return int Number of processed products.
      * @exception Exception
      */
-    function parse($url) {
-        $fp = fopen($url, 'r');
+    static function parse($url) {
+        $fp = @fopen($url, 'r');
         if (!$fp) {
             throw new \Exception("Could not open url: " . $url);
         }
@@ -52,6 +52,9 @@ class Parser {
         fclose($fp);
         if ($start) {
             throw new \Exception("Could not find </product>");
+        }
+        if (!$result) {
+            throw new \Exception("No products found.");
         }
 
         return $result;
