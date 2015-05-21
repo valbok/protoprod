@@ -1,6 +1,6 @@
 # Prototype of product feed - protoprod
 
-Handles very large XML-feeds without putting too much pressure on either the CPU or the memory. Because of that feeds can no longer be put into memory, but have to be processed in an alternative way.
+Example of how to handle very large XML-feeds without putting too much pressure on either the CPU or the memory. Because of that feeds can no longer be put into memory, but have to be processed in an alternative way.
 
 Consists of two parts.
 
@@ -16,19 +16,22 @@ Used custom made small MVC framework to fit the interface into.
 The feed processing function should be able to handle very large feeds of a fixed format.
 
 The feed is a few hundred megabytes large and contains thousands of products. 
-fetch the given URL
+fetch the given URL.
+
 1. Goes through each of the products and create a separate file for each product, containing the information on that product in the specific format.
-2. Dumps that file into a pre-defined directory
+
+2. Dumps that file into a pre-defined directory.
+
 3. Returns whether it was successful, and how many products it processed, or if not successful, what the error was.
 
-* Restrictions
+# Restrictions
 
 No specific PHP extension used, everything is custom made.
 No database is used;
 No (PHP, JavaScript) frameworks are used;
 Any PHP used should be E_STRICT compliant and limited to 32MB of memory.
 
-* Result
+# Result
 
 The basis of the example is a Product class that implements iProduct interface, which is supposed to be used to decrease dependencies in case if the solution will be used by external users.
 
